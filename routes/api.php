@@ -5,11 +5,10 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ApiTokenController;
 
-/*
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-*/
 
+/*****AUTH*****/
 //Auth REGISTER
 Route::post('auth/register', [ApiTokenController::class, 'register']);
+
+//Auth LOGIN
+Route::post('auth/login', [ApiTokenController::class, 'login']);
