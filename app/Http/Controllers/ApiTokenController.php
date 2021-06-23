@@ -75,4 +75,17 @@ class ApiTokenController extends Controller
         ], 200);
     }
 
+    //FUNCTION LOGOUT
+    public function logout(Request $request){
+
+        //401 UNAUTHENTICATED GÉRÉ PAR SANCTUM
+
+        //Suppresion du token
+        $request->user()->currentAccessToken()->delete();
+
+        //status déconnecté 204
+        return response(null, 204);
+
+    }
+
 }

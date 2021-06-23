@@ -7,8 +7,11 @@ use App\Http\Controllers\ApiTokenController;
 
 
 /*****AUTH*****/
-//Auth REGISTER
+//REGISTER
 Route::post('auth/register', [ApiTokenController::class, 'register']);
 
-//Auth LOGIN
+//LOGIN
 Route::post('auth/login', [ApiTokenController::class, 'login']);
+
+//LOGOUT
+Route::middleware('auth:sanctum')->post('auth/logout', [ApiTokenController::class, 'logout']);
