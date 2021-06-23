@@ -21,4 +21,8 @@ Route::middleware('auth:sanctum')->post('auth/logout', [ApiTokenController::clas
 Route::middleware('auth:sanctum')->post('auth/me', [ApiTokenController::class, 'me']);
 
 /*****POST*****/
+//ALL POSTS
 Route::get('posts', [PostController::class, 'showAllPosts']);
+
+//SHOW CURRENT POST
+Route::get('posts/{id}', [PostController::class, 'showPost']);
