@@ -77,7 +77,6 @@ class ApiTokenController extends Controller
 
     //FUNCTION LOGOUT
     public function logout(Request $request){
-
         //401 UNAUTHENTICATED GÉRÉ PAR SANCTUM
 
         //Suppresion du token
@@ -85,7 +84,22 @@ class ApiTokenController extends Controller
 
         //status déconnecté 204
         return response(null, 204);
+    }
 
+    //FUNCTION ME
+    public function me(Request $request)
+    {
+        //401 UNAUTHENTICATED GÉRÉ PAR SANCTUM
+
+        //200 COOL
+        return response()->json([
+            'id' => $request->user()->id,
+            'created_at' => $request->user()->created_at,
+            'updated_at' => $request->user()->updated_at,
+            'family_name' => $request->user()->family_name,
+            'given_name' => $request->user()->family_name,
+            'email' => $request->user()->email
+        ], 200);
     }
 
 }

@@ -15,3 +15,6 @@ Route::post('auth/login', [ApiTokenController::class, 'login']);
 
 //LOGOUT
 Route::middleware('auth:sanctum')->post('auth/logout', [ApiTokenController::class, 'logout']);
+
+//ME
+Route::middleware('auth:sanctum')->post('auth/me', [ApiTokenController::class, 'me']);
