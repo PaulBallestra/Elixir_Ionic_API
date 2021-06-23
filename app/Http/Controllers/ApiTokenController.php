@@ -84,7 +84,9 @@ class ApiTokenController extends Controller
         $request->user()->currentAccessToken()->delete();
 
         //status déconnecté 204
-        return response(null, 204);
+        return response()->json([
+            'success' => 'Déconnecté'
+        ], 204);
     }
 
     //FUNCTION ME
