@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ApiTokenController;
+use App\Http\Controllers\PostController;
 
 
 /*****AUTH*****/
@@ -18,3 +19,6 @@ Route::middleware('auth:sanctum')->post('auth/logout', [ApiTokenController::clas
 
 //ME
 Route::middleware('auth:sanctum')->post('auth/me', [ApiTokenController::class, 'me']);
+
+/*****POST*****/
+Route::get('posts', [PostController::class, 'showAllPosts']);

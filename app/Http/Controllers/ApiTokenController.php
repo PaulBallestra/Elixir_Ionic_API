@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 class ApiTokenController extends Controller
 {
 
+    /*-----AUTH-----*/
     //FUNCTION REGISTER
     public function register(Request $request)
     {
